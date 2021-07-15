@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration from</title>
+<style>
+.class50 {
+
+  height: 50%;
+  width: 50%;
+ 
+	
+  	
+	margin: auto;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: gray;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=file], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.resetbtn {
+  background-color: red;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<br>
+
+<div class="nav">
+  
+  <div class="nav-header">
+    <div class="nav-title">
+      E-learning
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+   <a th:href=@{/RegistrationForm}>Register Here!</a>
+	<a th:href=@{/login}>User Login</a>
+	<a th:href=@{/adminlogin}>Admin Login</a>
+   
+  </div>
+</div>
+
+
+
+
+
+<form th:action=@{/registerUser}  th:object=${newuser}  method="post" enctype="multipart/form-data">
+<!--  UserID:<input type="text" placeholder= "UserID" th:field=*{user_id}>-->
+  <div class="container" >
+ <h1>Registration from</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+Name:<input type="text" placeholder= "Name" th:field=*{name}>
+Email:<input type="text" placeholder= "Email" th:field=*{email}>
+Password:<input type="password" placeholder= "password" th:field=*{password}>
+Phone:<input type="text" placeholder= "phone" th:field=*{phone_no}>
+ProfilePhoto:
+<input type="file" accept="image/*"name="image">
+<br>
+Address:<input type="text" placeholder= "address" th:field=*{address}>
+<hr>
+<input  class="registerbtn" type="submit" name="Register">
+<input class="resetbtn" type="reset" name= "Reset">
+</div>
+
+
+</form>
+
+
+</body>
+</html>

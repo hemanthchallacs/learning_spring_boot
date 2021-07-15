@@ -1,0 +1,9 @@
+package com.elearning.spring.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.elearning.spring.entities.Enrolled;
+
+public interface EnrolledRepository extends JpaRepository<Enrolled, String> {
+
+}

@@ -1,0 +1,13 @@
+package com.elearning.spring;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Ver1ElearningApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Ver1ElearningApplication.class, args);
+	}
+
+}

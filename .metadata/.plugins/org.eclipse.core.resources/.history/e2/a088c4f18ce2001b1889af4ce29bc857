@@ -1,0 +1,6 @@
+spring.datasource.url=jdbc:oracle:thin:@//localhost:1521/orcl
+spring.datasource.username=elearning
+spring.datasource.password=learning123
+server.port = 8090
+spring.thymeleaf.cache=false
+

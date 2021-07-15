@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Course Details</title>
+</head>
+<body>
+<h3>My  enrolled Course Details</h3>
+<table>
+	<tr>
+		<td><div>Course ID:</div></td>
+		<td><div th:text="${course.course_id}"></div></td>
+	</tr>
+	<tr>
+		<td><div>Course Name:</div></td>
+		<td><div th:text="${course.c_name}"></div></td>
+	</tr>
+	<tr>
+		<td><div>Course Description:</div></td>
+		<td><div th:text="${course.c_desp}"></div></td>
+	</tr>
+	<tr>
+		<td><div>Course fee:</div></td>
+		<td><div th:text="${course.c_fees}"></div></td>
+	</tr>
+	<tr>
+	<td>
+	<!--th:action="@{/course/enroll/__${course.course_id}__/enrolled}"  -->
+		<form  th:action="@{/myCourses/__${course.course_id}__/feedbackPage}"  method = "get">
+		<input type="submit" value = "Give Feedback">
+		</form>
+	</td>
+	</tr>
+</table>
+</body>
+</html>

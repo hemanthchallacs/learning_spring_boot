@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html  xmlns:th ="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Course List</title>
+</head>
+<body>
+<a th:href=@{/contact}>Add Your Contact </a>
+<a th:href=@{/logout}>logout </a>
+<br><br>
+<h3>Course List [Not yet done]</h3>
+</body>
+</html>

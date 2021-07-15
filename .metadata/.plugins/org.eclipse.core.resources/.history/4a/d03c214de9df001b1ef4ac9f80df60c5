@@ -1,0 +1,5 @@
+package com.elearning.spring.repo;
+
+public interface ContactRepository {
+
+}

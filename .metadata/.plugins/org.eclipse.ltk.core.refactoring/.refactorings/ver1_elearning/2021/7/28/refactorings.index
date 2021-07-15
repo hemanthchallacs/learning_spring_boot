@@ -1,0 +1,8 @@
+1625610471283	Rename package 'com.elearning.spring.controller'
+1625702821725	Rename resource 'RegistrationFrom.html'
+1625708745294	Rename resource 'courses.html'
+1625708897721	Rename resource 'coursesList.html'
+1625747867948	Delete element
+1625843922358	Delete element
+1625846089295	Delete element
+1625959146535	Extract local variable 'curruser'

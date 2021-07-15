@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html  xmlns:th ="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Dash</title>
+</head>
+<body>
+<!-- <a th:href=@{/myProfile}>My Profile </a>
+<a th:href=@{/myCourses}>My Courses </a>
+<a th:href=@{/contact}>Contact </a> -->
+<a th:href=@{/adminlogout}>logout </a>
+<br><br>
+<h3>Admin Dash</h3>
+<a th:href=@{/addCourse}>ADD COURSE </a>
+<h2 style="float:right" th:text="${message}"></h2>
+<table>
+
+	<tr>
+		<th>Course_id</th>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Fee</th>
+		
+	
+	</tr>
+	<tr th:each="course: ${courses}">
+    	<td th:text="${course.course_id}" />
+   		<td th:text="${course.c_name}" />
+   		<td th:text="${course.c_desp}" />
+   		<td th:text="${course.c_fees}" />
+   		
+    </tr>
+
+
+</table>
+
+</body>
+</html>

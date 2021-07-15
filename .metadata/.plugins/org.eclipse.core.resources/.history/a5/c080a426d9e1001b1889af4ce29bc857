@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Feedback from</title>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=red]:hover {
+  background-color: red;
+}
+input[type=reset] {
+  width: 100%;
+  background-color: orange;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<h3>Feedback Form</h3>
+<br>
+
+<form th:action=@{__${#httpServletRequest.requestURI}__} th:object=${feedbacgk} method="post" >
+Name:<input type="text" placeholder= "User Name" th:field=*{name}>
+User_id:<input type="text" placeholder= "User Id" th:field=*{user_id}>
+
+Email:<input type="text" placeholder= "email" th:field=*{email}>
+Feedback:<input type="text" placeholder= "feedback" th:field=*{feedback}>
+
+<input type="submit" name="Send Feedback">
+<input type="reset" name= "Reset">
+
+
+
+</form>
+
+
+</body>
+</html>

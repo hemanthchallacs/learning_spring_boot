@@ -1,0 +1,4 @@
+package com.elearning.spring.content;
+
+@StoreRestResource(path="videos")
+public interface VideoStore extends Store<String> {}

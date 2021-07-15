@@ -1,0 +1,120 @@
+package com.elearning.spring.controllers;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.elearning.spring.entities.Contact;
+import com.elearning.spring.entities.User;
+import com.elearning.spring.repo.UserRepository;
+
+@Controller
+public class UserController {
+	
+	
+	@Autowired
+	UserRepository userRepo;
+	
+	@RequestMapping(value = "/testmav", method = RequestMethod.GET)	
+	public ModelAndView gettestmav() {
+		ModelAndView mav = new ModelAndView("dummy");
+		
+		mav.addObject("dummy", "Dummy value");
+		return mav;
+		
+		
+	}
+	
+	@RequestMapping(value = "/RegistrationForm", method = RequestMethod.GET)	
+	public ModelAndView getRegistrationForm() {
+		ModelAndView mav = new ModelAndView("RegistrationForm");
+		mav.addObject("newuser", new User());
+		return mav;
+		
+		
+	}
+	
+	@RequestMapping(value = "/registerUser", method = RequestMethod.POST)
+	public String registerUser(@ModelAttribute User newuser) {
+		System.out.println(newuser.getUser_id());
+		System.out.println(userRepo.save(newuser));
+		return "welcome";
+		
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)	
+	public ModelAndView getloginForm() {
+		
+		ModelAndView mav = new ModelAndView("login");
+		mav.addObject("loginuser", new User());
+		return mav;
+		
+	}
+	
+	@RequestMapping(value = "/loginUser", method = RequestMethod.POST)
+	public String loginUser(@ModelAttribute User loginuser) {
+		User retUser = userRepo.findById(loginuser.getUser_id()).get();
+		System.out.println(loginuser.getUser_id());
+		System.out.println(loginuser.getPassword());
+		
+		if(retUser.getPassword().equals(loginuser.getPassword()))
+		{	CoreController.setCurruser(loginuser);
+			return "courseList";
+		}
+		else
+			return "welcome";
+		
+	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)	
+	public String logout() {
+		
+		CoreController.setCurruser(null);
+		return "welcome";
+		
+	}
+	
+	
+	
+	@RequestMapping(value = "/users",produces = "application/json", method = RequestMethod.GET)	
+	@ResponseBody
+	public List<User> getUsers() {
+		return userRepo.findAll();
+		
+	}
+	
+	@RequestMapping(value = "/contact", method = RequestMethod.GET)	
+	public ModelAndView contactAdmin() {
+		
+		ModelAndView mav = new ModelAndView("contact");
+		User curruser = CoreController.getCurruser();
+		Contact cc = new Contact();
+		cc.setUser_id(curruser.getUser_id());
+		mav.addObject("newcontact", cc);
+		return mav;
+		
+	}
+	
+	@RequestMapping(value = "/contactSubmit", method = RequestMethod.POST)
+	public String contactAdminSubmit(@ModelAttribute Contact cc) {
+		User retUser = userRepo.findById(cc.getUser_id()).get();
+		System.out.println(retUser.getAddress());
+//		retUser.getContacts().add(cc);
+		return "courseList";
+		
+		
+		
+	}
+	
+	
+
+}

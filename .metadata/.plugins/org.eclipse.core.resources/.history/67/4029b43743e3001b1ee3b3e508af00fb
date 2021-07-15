@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html  xmlns:th ="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Course List</title>
+<style>
+<link th:href="@{/main.css}" rel="stylesheet"/>
+
+
+</style>
+</head>
+<body>
+<div class="nav" >
+  
+  <div class="nav-header">
+    <div class="nav-title">
+      E-learning
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+   <a th:href=@{/RegistrationForm}>Register Here!</a>
+	<a th:href=@{/login}>User Login</a>
+	<a th:href=@{/adminlogin}>Admin Login</a>
+   
+  </div>
+</div>
+
+<a th:href=@{/myProfile}>My Profile </a>
+<a th:href=@{/myCourses}>My Courses </a>
+<a th:href=@{/contact}>Contact </a>
+<a th:href=@{/logout}>logout </a>
+<br><br>
+<h3>Course List</h3>
+<h2 style="float:right" th:text="${message}"></h2>
+<table>
+
+	<tr>
+		<th>Course_id</th>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Fee</th>
+		<th>Option</th>
+	
+	</tr>
+	<tr th:each="course: ${courses}">
+    	<td th:text="${course.course_id}" />
+   		<td th:text="${course.c_name}" />
+   		<td th:text="${course.c_desp}" />
+   		<td th:text="${course.c_fees}" />
+   		<td>
+   		<a th:href="@{'/course/enroll/' + ${course.course_id}+'/enrollme'}">
+        	<span>Enroll</span>
+   			 </a>
+   		
+   		</td>
+    </tr>
+
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head >
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+Used Thymeleaf to make this page!
+<a th:href=@{/RegistrationForm}>Register Here!</a>
+
+</body>
+</html>

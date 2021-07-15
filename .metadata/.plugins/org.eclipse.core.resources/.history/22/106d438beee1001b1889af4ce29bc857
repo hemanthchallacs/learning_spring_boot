@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Course Details</title>
+</head>
+<body>
+<h3>Course Details</h3>
+<table>
+	<tr>
+		<td><div>Course ID:</div></td>
+		<td><div th:text="${course.course_id}"></div></td>
+	</tr>
+	<tr>
+		<td><div>Course Name:</div></td>
+		<td><div th:text="${course.c_name}"></div></td>
+	</tr>
+	<tr>
+		<td><div>Course Description:</div></td>
+		<td><div th:text="${course.c_desp}"></div></td>
+	</tr>
+	<tr>
+		<td><div>Course fee:</div></td>
+		<td><div th:text="${course.c_fees}"></div></td>
+	</tr>
+	<tr>
+	<td>
+	<!--th:action="@{/course/enroll/__${course.course_id}__/enrolled}"  -->
+		<form  th:action="@{/course/enroll/__${course.course_id}__/enrolled}" method = "post">
+		<input type="submit" value = "Enroll me!">
+		</form>
+	</td>
+	</tr>
+</table>
+<table>
+<th:block th:each="feedback,i : ${course.courseFeedbacks}">
+    <div th:text="${feedback.feed}"></div>
+ </th:block>
+</table>
+</body>
+</html>

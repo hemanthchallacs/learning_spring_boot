@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Course Details</title>
+</head>
+<body>
+<h3>Course Details</h3>
+<table>
+	<tr>
+		<td><div>User ID:</div></td>
+		<td><div th:text="${curruser.course_id}"></div></td>
+	</tr>
+	<tr>
+		<td><div> Name:</div></td>
+		<td><div th:text="${curruser.name}"></div></td>
+	</tr>
+	<tr>
+		<td><div>Email:</div></td>
+		<td><div th:text="${curruser.email}"></div></td>
+	</tr>
+	<tr>
+		<td><div>Phone no:</div></td>
+		<td><div th:text="${curruser.phone_no}"></div></td>
+	</tr>
+	<tr>
+		<td><div>Address</div></td>
+		<td><div th:text="${curruser.addrress}"></div></td>
+	</tr>
+	<tr>
+	<td>
+	
+	</td>
+	</tr>
+</table>
+
+
+</body>
+</html>
