@@ -1,0 +1,31 @@
+https://www.javadream.in/how-to-upload-file-in-spring-boot-using-form/
+
+
+^ hopefully helps in saving user profile pic
+
+https://stackoverflow.com/questions/49758030/invalid-table-name-while-consulting-a-oracle-database-from-spring-boot
+^solved wrong model table error
+
+https://stackoverflow.com/questions/56499928/web-server-failed-to-start-port-8080-was-already-in-use-spring-boot
+^solved port already occupied error
+
+https://stackoverflow.com/questions/34705238/why-do-i-get-org-hibernate-mappingexception-could-not-instantiate-id-generator
+^solved create sequence error
+
+https://stackoverflow.com/questions/18192521/ora-12505-tnslistener-does-not-currently-know-of-sid-given-in-connect-descript
+^proper datasource url for oracle
+
+
+https://thorben-janssen.com/ultimate-guide-association-mappings-jpa-hibernate/#Many-to-One_Associations
+^Helps in understanding association
+
+
+https://stackoverflow.com/questions/43751860/how-to-set-a-flash-message-in-spring-boot-with-thymeleaf
+^flash message
+
+
+https://stackoverflow.com/questions/40880772/spring-boot-redirect-to-a-different-controller-method
+^redirect to different method
+https://www.youtube.com/watch?v=1SIkBduGXeE
+https://www.youtube.com/watch?v=Buya2plwkj4
+^Youtube tutorial for  onetomany map
